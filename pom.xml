@@ -113,6 +113,16 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			<plugin>
+				<groupId>com.google.cloud.tools</groupId>
+				<artifactId>jib-maven-plugin</artifactId>
+				<version>1.7.0</version>
+				<configuration>
+					<to>
+						<image>demo</image>
+					</to>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 
