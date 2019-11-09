@@ -13,10 +13,15 @@ import org.springframework.data.r2dbc.repository.config.EnableR2dbcRepositories;
 @Configuration
 @EnableR2dbcRepositories
 class MysqlApplicationConfiguration extends AbstractR2dbcConfiguration {
+	EnvironmentConfig environmentConfig;
+
+	public MysqlApplicationConfiguration(EnvironmentConfig config) {
+		this.environmentConfig = config;
+	}
 
 	@Override
 	public io.r2dbc.spi.ConnectionFactory connectionFactory() {
-		String url = "mysql://root:pass@mysql:3306/users";
+		String url = environmentConfig.getDatabaseUrl();
 		return new JasyncConnectionFactory(
 				new MySQLConnectionFactory(URLParser.INSTANCE.parseOrDie(url, StandardCharsets.UTF_8)));
 	}
