@@ -10,8 +10,6 @@ public class EnvironmentConfig {
     private String databaseUrl;
 
     public EnvironmentConfig() {
-        System.out.println("Creating databaseUrl");
         this.databaseUrl = System.getenv("DATABASE_URL");
-        System.out.println(this.databaseUrl);
     }
 }
