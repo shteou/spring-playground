@@ -1,6 +1,5 @@
 package com.stewartplatt.user.config;
 
-import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 
 import lombok.Data;
